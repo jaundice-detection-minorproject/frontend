@@ -1,58 +1,31 @@
- import React from "react";
- import * as Components from './Components';
+import "./App.css";
+import Sidebar from "./components/Sidebar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { AboutUs, OurAim, OurVision } from "./pages/AboutUs";
+import Loginsignup from "./components/Loginsignup";
+import {
+Services,
+ServicesOne,
+ServicesTwo,
+} from "./pages/Services";
+import Camera from "./pages/Camera";
+import Upload from "./pages/Upload";
+import Contact from "./pages/ContactUs";
+function App() {
+return (
+	<Router>
+	<Routes>
+		<Route exact path='/about-us' element={<><Sidebar/><AboutUs/></>} />
+		<Route exact path='/about-us/aim' element={<><Sidebar/><OurAim/></>} />
+		<Route exact path='/about-us/vision' element={<><Sidebar/><OurVision/></>} />
+		<Route exact path='/services' element={<><Sidebar/><Services/></>} />
+		<Route exact path='/services/services1' element={<><Sidebar/><Camera/></>} />
+		<Route exact path='/services/services2' element={<><Sidebar/><Upload/></>} />
+		<Route exact path='/contact' element={<><Sidebar/><Contact/></>} />
+		<Route exact path='/' element={<Loginsignup/>} />
+	</Routes>
+	</Router>
+);
+}
 
- function App() {
-     const [signIn, toggle] = React.useState(true);
-      return(
-          <Components.Container>
-              <Components.SignUpContainer signinIn={signIn}>
-                  <Components.Form>
-                      <Components.Title>Create Account</Components.Title>
-                      <Components.Input type='text' placeholder='Name' />
-                      <Components.Input type='email' placeholder='Email' />
-                      <Components.Input type='password' placeholder='Password' />
-                      <Components.Button>Sign Up</Components.Button>
-                  </Components.Form>
-              </Components.SignUpContainer>
-
-              <Components.SignInContainer signinIn={signIn}>
-                   <Components.Form>
-                       <Components.Title>Sign in</Components.Title>
-                       <Components.Input type='email' placeholder='Email' />
-                       <Components.Input type='password' placeholder='Password' />
-                       <Components.Anchor href='#'>Forgot your password?</Components.Anchor>
-                       <Components.Button>Sign in</Components.Button>
-                   </Components.Form>
-              </Components.SignInContainer>
-
-              <Components.OverlayContainer signinIn={signIn}>
-                  <Components.Overlay signinIn={signIn}>
-
-                  <Components.LeftOverlayPanel signinIn={signIn}>
-                      <Components.Title>Welcome Back!</Components.Title>
-                      <Components.Paragraph>
-                          If you already have an existing account sign in
-                      </Components.Paragraph>
-                      <Components.GhostButton onClick={() => toggle(true)}>
-                          Sign In
-                      </Components.GhostButton>
-                      </Components.LeftOverlayPanel>
-
-                      <Components.RightOverlayPanel signinIn={signIn}>
-                        <Components.Title>Hello, Friend!</Components.Title>
-                        <Components.Paragraph>
-                            If you don't have an account
-                        </Components.Paragraph>
-                            <Components.GhostButton onClick={() => toggle(false)}>
-                                Sign Up
-                            </Components.GhostButton> 
-                      </Components.RightOverlayPanel>
-  
-                  </Components.Overlay>
-              </Components.OverlayContainer>
-
-          </Components.Container>
-      )
- }
-
- export default App;
+export default App;
