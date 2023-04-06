@@ -10,7 +10,7 @@ ServicesTwo,
 } from "./pages/Services";
 import Camera from "./pages/Camera";
 import Upload from "./pages/Upload";
-import Contact from "./pages/ContactUs";
+import Report from "./pages/ContactUs";
 function App() {
 return (
 	<Router>
@@ -21,7 +21,7 @@ return (
 		<Route exact path='/services' element={<><Sidebar/><Services/></>} />
 		<Route exact path='/services/services1' element={<><Sidebar/><Camera/></>} />
 		<Route exact path='/services/services2' element={<><Sidebar/><Upload/></>} />
-		<Route exact path='/contact' element={<><Sidebar/><Contact/></>} />
+		<Route exact path='/contact' element={<><Sidebar/><Report/></>} />
 		<Route exact path='/' element={<Loginsignup/>} />
 	</Routes>
 	</Router>
