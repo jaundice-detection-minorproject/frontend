@@ -1,0 +1,40 @@
+body{
+    cursor: default;
+}
+.reports{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    height: 80vh;
+}
+
+.header{
+    display: flex;
+    justify-content: flex-end;
+    width: 90%;
+    height: 20%;
+}
+.header h6{
+    width: 70%;
+    height: 100%;
+}
+.r-btn{
+    width: 20%;
+    height: 100%;
+}
+
+.r-btn button{
+    padding: 10px;
+    cursor: pointer;
+    font-size: 17px;
+    border-radius: 10px;
+    font-weight: 400;
+    background-color: rgb(118, 118, 217);
+}
+
+.files{
+    width: 90%;
+    height: 75%;
+    overflow-y: auto;
+    display: flex;
+}
