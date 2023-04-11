@@ -1,6 +1,7 @@
 import React from 'react'
 import DeleteIcon from '@mui/icons-material/Delete';
 import "../components/css/files.css"
+import Swal from 'sweetalert2';
 export default function Files(props) {
   const handleDelete=async()=>{
       props.setLoader(true)
@@ -9,14 +10,26 @@ export default function Files(props) {
         headers:{"content-type":"application/json",token:JSON.parse(localStorage.getItem("userInfo"))},
       })
       res=await res.json()
+      props.setLoader(false)
       if(res.status){
-        alert("Report Deleted Successfully")
+        Swal.fire({
+          position: "top-center",
+          icon: "success",
+          title: "Report Deleted SuccessFully...",
+          showConfirmButton: false,
+          timer: 2000,
+        });
         props.fecthReports();
       }
       else{
-        alert(res.err);
+        Swal.fire({
+          position: "top-center",
+          icon: "error",
+          title: res.err,
+          showConfirmButton: false,
+          timer: 2000,
+        });
       }
-      props.setLoader(false)
   }
   return (
     <div className='files-main' >

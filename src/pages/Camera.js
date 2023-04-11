@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import "../components/css/WebcamCapture.css";
+import Swal from 'sweetalert2';
 
 const WebcamCapture = (props) => {
   const videoRef = useRef(null);
@@ -55,10 +56,22 @@ const WebcamCapture = (props) => {
     }
     else {
       if (res.msg) {
-        alert(res.msg);
+        Swal.fire({
+          position: "top-center",
+          icon: "error",
+          title: res.msg,
+          showConfirmButton: false,
+          timer: 2000,
+        });
       }
       else {
-        alert("Server Error...");
+        Swal.fire({
+          position: "top-center",
+          icon: "error",
+          title: "Server Error.....",
+          showConfirmButton: false,
+          timer: 2000,
+        });
       }
     }
     props.setLoader(false)

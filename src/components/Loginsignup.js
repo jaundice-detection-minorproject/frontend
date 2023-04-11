@@ -121,8 +121,10 @@ function LoginSignup(props) {
     };
     
     try{
+      props.setLoader(true)
       const res = await axios.post('https://reportsminorproject.glitch.me/user/login', body, config);
       console.log(JSON.stringify(res));
+      props.setLoader(false)
       Swal.fire({
         position: "top-center",
         icon: "success",

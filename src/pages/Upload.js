@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "../components/css/box.css";
-
+import Swal from 'sweetalert2';
 function Upload(props) {
   const [selectedImage, setSelectedImage] = useState(null);
   const [getFile,setFile]=useState(null);
@@ -38,10 +38,22 @@ function Upload(props) {
     }
     else {
       if (res.msg) {
-        alert(res.msg);
+        Swal.fire({
+          position: "top-center",
+          icon: "error",
+          title: res.msg,
+          showConfirmButton: false,
+          timer: 2000,
+        });
       }
       else {
-        alert("Server Error...");
+        Swal.fire({
+          position: "top-center",
+          icon: "error",
+          title: "Server Error....",
+          showConfirmButton: false,
+          timer: 2000,
+        });
       }
     }
     props.setLoader(false)

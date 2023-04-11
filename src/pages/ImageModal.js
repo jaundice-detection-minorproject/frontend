@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import { TextField } from '@mui/material';
 import "../components/css/imagemodal.css"
-
+import Swal from 'sweetalert2';
 const style = {
   position: 'absolute',
   top: '50%',
@@ -28,6 +28,26 @@ export default function ImageModal(props) {
         setFile(file.target.files[0]);
     }
     const handleClick=async()=>{
+        if(getTitle==""){
+          Swal.fire({
+            position: "top-left",
+            icon: "error",
+            title: "Enter Some Title...",
+            showConfirmButton: false,
+            timer: 2000,
+            });
+            return
+        }
+        if(!getFile){
+          Swal.fire({
+            position: "top-left",
+            icon: "error",
+            title: "Select Some File....",
+            showConfirmButton: false,
+            timer: 2000,
+            });
+            return;
+        }
         props.setLoader(true)
         let formdata=new FormData();
         formdata.append("title",getTitle);
@@ -38,15 +58,27 @@ export default function ImageModal(props) {
             body:formdata
         })
         res=await res.json();
+        props.setLoader(false)
         if(res.status){
             props.setOpen(false);
-            alert("Report Added");
             props.fecthReports()
+            Swal.fire({
+                position: "top-center",
+                icon: "success",
+                title: "Report Added Successfully...",
+                showConfirmButton: false,
+                timer: 2000,
+              });
         }
         else{
-            alert(res.err);
+            Swal.fire({
+                position: "top-left",
+                icon: "error",
+                title: res.err,
+                showConfirmButton: false,
+                timer: 2000,
+              });
         }
-        props.setLoader(false)
     }
   return (
     <div>

@@ -20,7 +20,7 @@ return (
 	{
 		props.getFiles.map((item)=>{
 			return(
-				<Files fecthReports={fecthReports} file={item}/>
+				<Files fecthReports={fecthReports} file={item} setLoader={props.setLoader}/>
 			)
 		})
 	}
