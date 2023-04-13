@@ -34,7 +34,7 @@ function Upload(props) {
     });
     res = await res.json();
     if (res.status) {
-      setData({ status: true, msg: res.Predict === 1 ? "You have jaundice" : "You don't have jaundice", prob: 100 * res.Probability });
+      setData({ status: true, msg: res.Predict === 1 ? "You have jaundice" : "You don't have jaundice", prob: res.Probability });
     }
     else {
       if (res.msg) {
