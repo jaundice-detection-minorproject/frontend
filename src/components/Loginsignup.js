@@ -82,7 +82,7 @@ function LoginSignup(props) {
         timer: 2000,
       });
       localStorage.setItem('userInfo', JSON.stringify(res.data.token));
-      history("/about-us");
+      history("/");
     }catch (err) {
       console.log(err);
       Swal.fire({
@@ -133,7 +133,7 @@ function LoginSignup(props) {
         timer: 2000,
       });
       localStorage.setItem('userInfo', JSON.stringify(res.data.token));
-      history("/about-us");
+      history("/");
     }catch (err) {
       console.log(err);
       Swal.fire({

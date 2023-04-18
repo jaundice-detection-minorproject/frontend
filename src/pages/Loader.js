@@ -4,11 +4,11 @@ import { CirclesWithBar } from 'react-loader-spinner'
 const style = {
   position: 'absolute',
   top: '55%',
-  left: '60%',
+  left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 400,
   bgcolor: 'background.paper',
-  boxShadow: 24,
+  border:'none',
+  // boxShadow: 24,
   p: 4,
 };
 

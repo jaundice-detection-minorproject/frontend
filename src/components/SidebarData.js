@@ -43,7 +43,7 @@ const handleLogout=async()=>{
 export const SidebarData = [
 {
 	title: "Home",
-	path: "/about-us",
+	path: "/",
 	icon: <AiIcons.AiFillHome />,
 	iconClosed: <RiIcons.RiArrowDownSFill />,
 	iconOpened: <RiIcons.RiArrowUpSFill />,
@@ -51,19 +51,19 @@ export const SidebarData = [
 	subNav: [
 	{
 		title: "Our Aim",
-		path: "/about-us/aim",
+		path: "/aim",
 		icon: <RiIcons.RiFocus2Fill />,
 	},
 	{
 		title: "Our Vision",
-		path: "/about-us/vision",
+		path: "/vision",
 		icon: <RiIcons.RiFocus2Fill />,
 	},
 	],
 },
 {
 	title: "Services",
-	path: "/services",
+	path: "/services/captureImage",
 	icon: <IoIcons.IoIosPaper />,
 	iconClosed: <RiIcons.RiArrowDownSFill />,
 	iconOpened: <RiIcons.RiArrowUpSFill />,
@@ -71,13 +71,13 @@ export const SidebarData = [
 	subNav: [
 	{
 		title: "Capture image",
-		path: "/services/services1",
+		path: "/services/captureImage",
 		icon: <IoIcons.IoIosPaper />,
 		cName: "sub-nav",
 	},
 	{
 		title: "Upload Image",
-		path: "/services/services2",
+		path: "/services/uploadImage",
 		icon: <IoIcons.IoIosPaper />,
 		cName: "sub-nav",
 	},
@@ -86,12 +86,12 @@ export const SidebarData = [
 },
 {
 	title: "Your Reports",
-	path: "/contact",
+	path: "/reports",
 	icon: <RiIcons.RiBarChart2Line />,
 },
 {
 	title: "Logout",
-	path: "/",
+	path: "/login",
 	icon: <IoIcons.IoIosLogOut />,
 	action:handleLogout,
 },

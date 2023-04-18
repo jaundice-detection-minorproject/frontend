@@ -78,7 +78,7 @@ const WebcamCapture = (props) => {
   }
 
   const resultStyle = {
-    color: getData.prob >= 50 ? 'green' : 'red' // Function to Change color based on result percentage
+    color: getData.msg=="You have jaundice" ? 'red' : 'green' // Function to Change color based on result percentage
   };
 
   return (
@@ -98,7 +98,7 @@ const WebcamCapture = (props) => {
       {getData.status && (
         <div className="result-container">
           <div className="msg" style={resultStyle}>{getData.msg}</div>
-          <div className="prob">Probability: {getData.prob}%</div>
+          <div className="prob">I Predict With Confidence of {getData.prob}%</div>
         </div>
       )}
     </div>
