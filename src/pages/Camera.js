@@ -45,9 +45,9 @@ const WebcamCapture = (props) => {
     let data = { dataURL };
     let res = await fetch("https://jaundice-backend.onrender.com/have", {
       method: "POST",
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      // headers: {
+      //   'Content-Type': 'application/json',
+      // },
       body: JSON.stringify(data),
     });
     res = await res.json();
