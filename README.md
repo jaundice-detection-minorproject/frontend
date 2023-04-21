@@ -1,1 +1,1 @@
-Project Link : [https://jaundiceminorproject.netlify.app/](https://jaundiceminorproject.netlify.app/)
+Project Link : [https://medicalcares.netlify.app/](https://medicalcares.netlify.app/)
